@@ -45,7 +45,7 @@ for(var i=0;i<weatherData.length;i++){
         <td>${weatherData[i].weather}</td>
         <td>${weatherData[i].temp}</td>
         <td>${weatherData[i].wind}</td>
-    `  
+    `;  
     tr.innerHTML = timestamp;
     
     tbody.appendChild(tr);
@@ -62,15 +62,15 @@ for(var i=0;i<weatherData.length;i++){
 
 var tågdata = [
     {
-    nr: "42",
-     avgång: "10:25",
+        nr: "42",
+        avgång: "10:25",
         ankommer: "11:23",
        
     },
     {
         nr: "43",
-         avgång: "11:25",
-            ankommer: "12:23",
+        avgång: "11:25",
+        ankommer: "12:23",
            
         },
         {
@@ -83,13 +83,13 @@ var tågdata = [
 ]
 
 
-var trainBody= document.getElementById("tåg");   
+var trainBody = document.getElementById("tåg");   
 function createTrainTable(){
 
-for(var i=0;i<tågdata.length;i++){
+for( var i = 0;i < tågdata.length;i++){
   
     var tr = document.createElement('tr');
-  var timestamp = `
+    var timestamp = `
         <td>${tågdata [i].nr}</td>
         <td>${tågdata [i].avgång}</td>
         <td>${tågdata [i].ankommer}</td>
@@ -143,7 +143,7 @@ submitButton.addEventListener('click', (event) => {
 
 
     var weatherTbody = document.getElementById("weather-data");
-    weatherTbody.innerHTML="";
+    //weatherTbody.innerHTML="";
     var response;
    
     var ajax = new XMLHttpRequest();
@@ -161,7 +161,7 @@ submitButton.addEventListener('click', (event) => {
     }
     var city = 'London';
     var apikey = '051c1eb9609e3ee008785295157b75e7';
-    ajax.open('GET', 'http://api.openweathermap.org/data/2.5/forecast?q=' + city +
+    ajax.open('GET', 'https://api.openweathermap.org/data/2.5/forecast?q=' + city +
     '&APPID=' + apikey, true);
     ajax.send();
     
