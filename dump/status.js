@@ -183,9 +183,9 @@ submitButton.addEventListener('click', (event) => {
 
     function temperatureConverter(valNum) {
         valNum = parseFloat(valNum);
-        var  val = Number((valNum-32) / 1.8);
+        var  val = Number((valNum-273));
         console.log(val);
-         return val; 
+         return val.toFixed(1); 
      } 
 
         for(var index = 0; index < 5; index++){
@@ -202,10 +202,11 @@ submitButton.addEventListener('click', (event) => {
             
             var  weather1 =data[index].weather[0].main;
             console.log(weather1);
-            var  weath =temperatureConverter(weather1);
+           
             wetherInf.Väder= weather1;
  
             var temp=data[index].main.temp;
+            temp =temperatureConverter(temp);
             wetherInf.Värme=temp;
 
             var speed= data[index].wind.speed;
